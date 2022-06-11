@@ -15,7 +15,7 @@ public class ListExer {
      */
     @Test
     public void testListRemove() {
-        List list = new ArrayList();
+        List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(2);
         list.add(3);
@@ -23,7 +23,7 @@ public class ListExer {
         System.out.println(list);//
     }
 
-    private void updateList(List list) {
+    private void updateList(List<Integer> list) {
 //        list.remove(2);
         list.remove(new Integer(2));
     }

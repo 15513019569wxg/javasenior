@@ -1,5 +1,7 @@
 package exer;
 
+import java.util.Objects;
+
 /**
  * @author shkstart
  * @create 2019 上午 10:50
@@ -34,7 +36,7 @@ public class Person {
         Person person = (Person) o;
 
         if (id != person.id) return false;
-        return name != null ? name.equals(person.name) : person.name == null;
+        return Objects.equals(name, person.name);
     }
 
     @Override

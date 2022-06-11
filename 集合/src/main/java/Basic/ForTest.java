@@ -15,7 +15,7 @@ public class ForTest {
 
     @Test
     public void test1(){
-        Collection coll = new ArrayList();
+        Collection<Object> coll = new ArrayList<>();
         coll.add(123);
         coll.add(456);
         coll.add(new Person("Jerry",20));

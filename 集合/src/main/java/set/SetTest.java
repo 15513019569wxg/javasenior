@@ -22,7 +22,7 @@ import java.util.Set;
  *
  *  2. 要求：向Set(主要指：HashSet、LinkedHashSet)中添加的数据，其所在的类一定要重写hashCode()和equals()
  *     要求：重写的hashCode()和equals()尽可能保持一致性：相等的对象必须具有相等的散列码
- *      重写两个方法的小技巧：对象中用作 equals() 方法比较的 Field，都应该用来计算 hashCode 值。
+ *      重写两个方法的小技巧：对象中用作equals()方法比较的 Field，都应该用来计算 hashCode 值。
  *
  *
  * @author shkstart
@@ -33,7 +33,6 @@ public class SetTest {
     一、Set：存储无序的、不可重复的数据
     以HashSet为例说明：
     1. 无序性：不等于随机性。存储的数据在底层数组中并非按照数组索引的顺序添加，而是根据数据的哈希值决定的。
-
     2. 不可重复性：保证添加的元素按照equals()判断时，不能返回true.即：相同的元素只能添加一个。
 
     二、添加元素的过程：以HashSet为例：
@@ -58,7 +57,7 @@ public class SetTest {
 
     @Test
     public void test1(){
-        Set set = new HashSet();
+        HashSet<Comparable> set = new HashSet<>();
         set.add(456);
         set.add(123);
         set.add(123);
@@ -68,7 +67,7 @@ public class SetTest {
         set.add(new User("Tom",12));
         set.add(129);
 
-        Iterator iterator = set.iterator();
+        Iterator<Comparable> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
@@ -79,17 +78,18 @@ public class SetTest {
     //优点：对于频繁的遍历操作，LinkedHashSet效率高于HashSet
     @Test
     public void test2(){
-        Set set = new LinkedHashSet();
+        Set<Object> set = new LinkedHashSet<>();
         set.add(456);
-        set.add(123);
-        set.add(123);
+        for (int i = 0; i < 2; i++) {
+            set.add(123);
+        }
         set.add("AA");
         set.add("CC");
         set.add(new User("Tom",12));
         set.add(new User("Tom",12));
         set.add(129);
 
-        Iterator iterator = set.iterator();
+        Iterator<Object> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }

@@ -117,20 +117,20 @@ public class MapTest {
 
     @Test
     public void test5(){
-        Map map = new HashMap();
+        Map<Object, Integer> map = new HashMap<>();
         map.put("AA",123);
         map.put(45,1234);
         map.put("BB",56);
 
         //遍历所有的key集：keySet()
-        Set set = map.keySet();
-        Iterator iterator = set.iterator();
+        Set<Object> set = map.keySet();
+        Iterator<Object> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
         System.out.println();
         //遍历所有的value集：values()
-        Collection values = map.values();
+        Collection<Integer> values = map.values();
         for(Object obj : values){
             System.out.println(obj);
         }
@@ -138,8 +138,8 @@ public class MapTest {
 
         //遍历所有的key-value
         //方式一：entrySet()
-        Set entrySet = map.entrySet();
-        Iterator iterator1 = entrySet.iterator();
+        Set<Map.Entry<Object, Integer>> entrySet = map.entrySet();
+        Iterator<Map.Entry<Object, Integer>> iterator1 = entrySet.iterator();
         while (iterator1.hasNext()){
             Object obj = iterator1.next();
             //entrySet集合中的元素都是entry
@@ -149,8 +149,8 @@ public class MapTest {
         }
         System.out.println();
         //方式二：
-        Set keySet = map.keySet();
-        Iterator iterator2 = keySet.iterator();
+        Set<Object> keySet = map.keySet();
+        Iterator<Object> iterator2 = keySet.iterator();
         while(iterator2.hasNext()){
             Object key = iterator2.next();
             Object value = map.get(key);
@@ -172,7 +172,7 @@ public class MapTest {
      */
     @Test
     public void test4(){
-        Map map = new HashMap();
+        Map<java.io.Serializable, Integer> map = new HashMap<>();
         map.put("AA",123);
         map.put(45,123);
         map.put("BB",56);
@@ -187,7 +187,7 @@ public class MapTest {
 
         map.clear();
 
-        System.out.println(map.isEmpty());
+        System.out.println(true);
 
     }
 
@@ -200,7 +200,7 @@ public class MapTest {
      */
     @Test
     public void test3(){
-        Map map = new HashMap();
+        Map<java.io.Serializable, Integer> map = new HashMap<>();
         //添加
         map.put("AA",123);
         map.put(45,123);
@@ -210,7 +210,7 @@ public class MapTest {
 
         System.out.println(map);
 
-        Map map1 = new HashMap();
+        Map<String, Integer> map1 = new HashMap<String, Integer>();
         map1.put("CC",123);
         map1.put("DD",123);
 
@@ -231,8 +231,8 @@ public class MapTest {
 
     @Test
     public void test2(){
-        Map map = new HashMap();
-        map = new LinkedHashMap();
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        map = new LinkedHashMap<Integer, String>();
         map.put(123,"AA");
         map.put(345,"BB");
         map.put(12,"CC");

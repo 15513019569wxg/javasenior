@@ -20,14 +20,14 @@ public class IteratorTest {
 
     @Test
     public void test1(){
-        Collection coll = new ArrayList();
+        Collection<Object> coll = new ArrayList<>();
         coll.add(123);
         coll.add(456);
         coll.add(new Person("Jerry",20));
         coll.add(new String("Tom"));
         coll.add(false);
 
-        Iterator iterator = coll.iterator();
+        Iterator<Object> iterator = coll.iterator();
         //方式一：
 //        System.out.println(iterator.next());
 //        System.out.println(iterator.next());
@@ -53,7 +53,7 @@ public class IteratorTest {
 
     @Test
     public void test2(){
-        Collection coll = new ArrayList();
+        Collection<Object> coll = new ArrayList<>();
         coll.add(123);
         coll.add(456);
         coll.add(new Person("Jerry",20));
@@ -80,7 +80,7 @@ public class IteratorTest {
     // 再调用remove都会报IllegalStateException。
     @Test
     public void test3(){
-        Collection coll = new ArrayList();
+        ArrayList<Object> coll = new ArrayList<>();
         coll.add(123);
         coll.add(456);
         coll.add(new Person("Jerry",20));
@@ -88,7 +88,7 @@ public class IteratorTest {
         coll.add(false);
 
         //删除集合中"Tom"
-        Iterator iterator = coll.iterator();
+        Iterator<Object> iterator = coll.iterator();
         while (iterator.hasNext()){
 //            iterator.remove();
             Object obj = iterator.next();

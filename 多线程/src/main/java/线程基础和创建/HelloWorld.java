@@ -1,5 +1,8 @@
 package 线程基础和创建;
 
+/**
+ * @author capensis
+ */
 public class HelloWorld {
 
     static int num = 10;

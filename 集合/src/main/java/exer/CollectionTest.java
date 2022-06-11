@@ -14,7 +14,7 @@ import java.util.List;
 public class CollectionTest {
     @Test
     public void test1(){
-        Collection coll = new ArrayList();
+        ArrayList coll = new ArrayList();
 
         coll.add(123);
         coll.add(456);
@@ -26,20 +26,19 @@ public class CollectionTest {
 
 
     //练习：在List内去除重复数字值，要求尽量简单
-    public static List duplicateList(List list) {
-        HashSet set = new HashSet();
-        set.addAll(list);
-        return new ArrayList(set);
+    public static List<Integer> duplicateList(List<Integer> list) {
+        HashSet<Integer> set = new HashSet<Integer>(list);
+        return new ArrayList<Integer>(set);
     }
     @Test
     public void test2(){
-        List list = new ArrayList();
-        list.add(new Integer(1));
-        list.add(new Integer(2));
-        list.add(new Integer(2));
-        list.add(new Integer(4));
-        list.add(new Integer(4));
-        List list2 = duplicateList(list);
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        for (int i : new int[]{2, 4, 4}) {
+            list.add(i);
+        }
+        List<Integer> list2 = duplicateList(list);
         for (Object integer : list2) {
             System.out.println(integer);
         }
@@ -47,7 +46,7 @@ public class CollectionTest {
 
     @Test
     public void test3(){
-        HashSet set = new HashSet();
+        HashSet<Person> set = new HashSet<Person>();
         Person p1 = new Person(1001,"AA");
         Person p2 = new Person(1002,"BB");
 

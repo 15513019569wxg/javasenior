@@ -2,6 +2,7 @@ package set;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -20,7 +21,7 @@ public class TreeSetTest {
      */
     @Test
     public void test1(){
-        TreeSet set = new TreeSet();
+        TreeSet<User> set = new TreeSet<>();
 
         //失败：不能添加不同类的对象
 //        set.add(123);
@@ -44,7 +45,7 @@ public class TreeSetTest {
         set.add(new User("Jack",56));
 
 
-        Iterator iterator = set.iterator();
+        Iterator<User> iterator = set.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
@@ -66,12 +67,7 @@ public class TreeSetTest {
 
         TreeSet set = new TreeSet(com);
         set.add(new User("Tom",12));
-        set.add(new User("Jerry",32));
-        set.add(new User("Jim",2));
-        set.add(new User("Mike",65));
-        set.add(new User("Mary",33));
-        set.add(new User("Jack",33));
-        set.add(new User("Jack",56));
+        set.addAll(Arrays.asList(new User("Jerry", 32), new User("Jim", 2), new User("Mike", 65), new User("Mary", 33), new User("Jack", 33), new User("Jack", 56)));
 
 
         Iterator iterator = set.iterator();

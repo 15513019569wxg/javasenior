@@ -93,13 +93,13 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
      */
     @Test
     public void test3(){
-        ArrayList list = new ArrayList();
+        ArrayList<java.io.Serializable> list = new ArrayList<java.io.Serializable>();
         list.add(123);
         list.add(456);
         list.add("AA");
 
         //方式一：Iterator迭代器方式
-        Iterator iterator = list.iterator();
+        Iterator<java.io.Serializable> iterator = list.iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next());
         }
@@ -125,7 +125,7 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
 
     @Test
     public void test2(){
-        ArrayList list = new ArrayList();
+        ArrayList<Object> list = new ArrayList<>();
         list.add(123);
         list.add(456);
         list.add("AA");
@@ -148,7 +148,7 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
         System.out.println(list);
 
         //List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的左闭右开区间的子集合
-        List subList = list.subList(2, 4);
+        List<Object> subList = list.subList(2, 4);
         System.out.println(subList);
         System.out.println(list);
 
@@ -158,7 +158,7 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
 
     @Test
     public void test1(){
-        ArrayList list = new ArrayList();
+        ArrayList<Object> list = new ArrayList<>();
         list.add(123);
         list.add(456);
         list.add("AA");
@@ -172,7 +172,7 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
         System.out.println(list);
 
         //boolean addAll(int index, Collection eles):从index位置开始将eles中的所有元素添加进来
-        List list1 = Arrays.asList(1, 2, 3);
+        List<Integer> list1 = Arrays.asList(1, 2, 3);
         list.addAll(list1);
 //        list.add(list1);
         System.out.println(list.size());//9
@@ -181,6 +181,4 @@ List subList(int fromIndex, int toIndex):返回从fromIndex到toIndex位置的�
         System.out.println(list.get(0));
 
     }
-
-
 }
